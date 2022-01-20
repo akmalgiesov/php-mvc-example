@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="public/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="public/css/main.css"/>
+    </head>
+    <body onload="load()">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="btn btn-primary" href="/logout">Выйти</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="container-content">
+        <table class="table mt-4 table-striped align-middle" id="taskTable">
+          <thead>
+            <tr>
+              <th scope="col" class="col-1"><a class="sort-link" data="id">№</a></th>
+              <th scope="col" class="col-3"><a class="sort-link" data="fio">Ф.И.О</a></th>
+              <th scope="col" class="col-2"><a class="sort-link" data="mail">E-mail</a></th>
+              <th scope="col" class="col-2"><a class="sort-link" data="task">Задача</a></th>
+              <th scope="col" class="col-1"><a class="sort-link" data="status">Статус</a></th>
+              <th scope="col"><a class="sort-link" data="status">Дополнительно</a></th>
+              <th scope="col"><a>Действия</a></th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <nav>
+        <ul class="pagination">
+          <?php
+          if($data > 1){
+            for($i = 1;$i <= $data;$i++){
+              echo "<li class='page-item'><a class='page-link' data ='$i' href='#'>$i</a></li>";
+            }
+            echo "<li class='page-item'><a class='page-link' href='#' data ='$data'>Последняя страница</a></li>";
+          }
+          ?>
+        </ul>
+      </nav>
+    </div>
+
+
+
+
+<div class="modal fade" id="updateForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col">
+            <label for="exampleFormControlInput1" class="form-label">Ф.И.О</label>
+            <input type="text" class="form-control" id="fio">
+          </div>
+          <div class="col">
+            <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+            <input type="text" class="form-control" id="mail">
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+             <input class="form-check-input" type="checkbox" value="" id="statusCheck">
+             <label for="exampleFormControlInput1" class="form-label">Выполнено</label>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+          <label for="exampleFormControlTextarea1" class="form-label">Текст задачи</label>
+          <textarea class="form-control" id="taskText" rows="3"></textarea>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="update">Сохранить изменения</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="public/js/admin.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+</html>

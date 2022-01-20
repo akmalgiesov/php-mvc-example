@@ -1,0 +1,19 @@
+body{
+  user-select: none!important;
+}
+
+.container-content{
+  min-height: 400px!important;
+}
+
+.sort-link:hover{
+  cursor: pointer;
+}
+
+.width-small{
+  width:100px;
+}
+
+.width-medium{
+  min-width: 450!important;
+}

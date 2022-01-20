@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="public/css/bootstrap.min.css"/>
+    </head>
+    <body>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card position-absolute top-50 start-50 translate-middle">
+              <div class="card-body bg-body">
+                <form action="/login" method="POST">
+                  <div class="mt-2">
+                    <label for="exampleFormControlInput1" class="form-label">Логин:</label>
+                    <input type="text" class="form-control" name="username">
+                  </div>
+                  <div class="mt-2">
+                    <label for="exampleFormControlInput1" class="form-label">Пароль:</label>
+                    <input type="password" class="form-control" name="password">
+                  </div>
+                  <div class="d-grid gap-2 mt-5">
+                    <input class="btn btn-dark" type="submit" value="Войти">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <?php $data != "" ? print "<div class='alert alert-danger' role='alert'>$data</div>":'' ?>
+
+      </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+</html>
